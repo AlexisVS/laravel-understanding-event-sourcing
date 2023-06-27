@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
     <div
-        class="relative min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"
+        class="relative min-h-screen bg-dots-darker bg-center dark:text-gray-300 bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"
     >
         <div v-if="canLogin" class="p-6 text-right">
             <Link
@@ -38,7 +38,7 @@ defineProps<{
             </template>
         </div>
 
-        <h1 class="text-center text-white text-xl font-semibold">Laravel understanding event sourcing</h1>
+        <h1 class="text-center dark:text-gray-100 text-2xl font-semibold">Laravel understanding event sourcing</h1>
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <slot/>
