@@ -14,7 +14,7 @@ import NavigationMenu from "@/Layouts/Authenticated/partials/NavigationMenu.vue"
             </Header>
 
             <main>
-                <slot/>
+                <slot name="content"/>
             </main>
         </div>
     </div>

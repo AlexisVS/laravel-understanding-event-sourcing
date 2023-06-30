@@ -16,6 +16,10 @@ defineProps<{
             <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                 Dashboard
             </ResponsiveNavLink>
+
+            <ResponsiveNavLink :href="route('account.index')" :active="route().current('account.index')">
+                Account
+            </ResponsiveNavLink>
         </div>
 
         <!-- Responsive Settings Options -->
