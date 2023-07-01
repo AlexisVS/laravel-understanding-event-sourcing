@@ -12,14 +12,6 @@ class DomainServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register(): void
     {
-//        /** @var Migrator $migrator */
-//        $migrator = $this->app->get(Migrator::class);
-//        $migrator->getMigrationFiles([
-//            dirname(__DIR__) . 'Domain/**/Database/Migrations',
-//            dirname(__DIR__) . 'Domain/**/**/Database/Migrations',
-//            dirname(__DIR__) . 'Domain/**/**/**/Database/Migrations',
-//        ]);
-
     }
 
     /**
