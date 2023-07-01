@@ -18,7 +18,7 @@ abstract class AbstractDomainFactory extends Factory
     {
         parent::__construct();
 
-        $this->model = self::getModel();
+        $this->model = static::getModel();
     }
 
     /**

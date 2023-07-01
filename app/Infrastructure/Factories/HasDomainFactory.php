@@ -18,11 +18,11 @@ trait HasDomainFactory
         $class = new ReflectionClass(static::class);
         $namespace = $class->getNamespaceName();
 
-
         $modelNamespace = str_replace('Models', 'Database\Factories', $namespace);
 
         /**  @var Factory $factory */
         $factory = $modelNamespace . '\\' . $class->getShortName() . 'Factory';
+
 
         return $factory::new();
     }
