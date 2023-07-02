@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace App\Domain\Account\Projections;
+namespace App\Domain\Account;
 
 use App\Domain\Account\Events\AccountCreated;
 use App\Domain\Account\Events\MoneyAdded;
@@ -11,12 +11,12 @@ use App\Domain\Account\Events\MoneySubtracted;
 use Ramsey\Uuid\Uuid;
 use Spatie\EventSourcing\Projections\Projection;
 
-class AccountProjection extends Projection
+class Account extends Projection
 {
     protected $table = 'accounts';
     protected $guarded = [];
 
-    public static function createWithAttributes(array $attributes): AccountProjection
+    public static function createWithAttributes(array $attributes): Account
     {
         /*
          * Let's generate a uuid.
@@ -44,8 +44,8 @@ class AccountProjection extends Projection
         event(new MoneySubtracted($this->uuid, $amount));
     }
 
-    public static function uuid(string $uuid): AccountProjection
+    public static function uuid(string $uuid): Account
     {
-        return (new AccountProjection)->where('uuid', $uuid)->firstOrFail();
+        return (new Account)->where('uuid', $uuid)->firstOrFail();
     }
 }

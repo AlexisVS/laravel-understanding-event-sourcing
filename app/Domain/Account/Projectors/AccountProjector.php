@@ -2,22 +2,22 @@
 
 namespace App\Domain\Account\Projectors;
 
+use App\Domain\Account\Account;
 use App\Domain\Account\Events\AccountCreated;
 use App\Domain\Account\Events\MoneyAdded;
 use App\Domain\Account\Events\MoneySubtracted;
-use App\Domain\Account\Projections\AccountProjection;
 use Spatie\EventSourcing\EventHandlers\Projectors\Projector;
 
 class AccountProjector extends Projector
 {
     public function onAccountCreated(AccountCreated $event): void
     {
-        (new AccountProjection($event->accountAttributes))->writeable()->save();
+        (new Account($event->accountAttributes))->writeable()->save();
     }
 
     public function onMoneyAdded(MoneyAdded $event): void
     {
-        $account = AccountProjection::uuid($event->accountUuid);
+        $account = Account::uuid($event->accountUuid);
 
         $account->balance += $event->amount;
 
@@ -26,7 +26,7 @@ class AccountProjector extends Projector
 
     public function onMoneySubtracted(MoneySubtracted $event): void
     {
-        $account = AccountProjection::uuid($event->accountUuid);
+        $account = Account::uuid($event->accountUuid);
 
         $account->balance -= $event->amount;
 
