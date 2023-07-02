@@ -3,13 +3,13 @@
 namespace App\Domain\User\Database\Factories;
 
 use App\Domain\User\Models\User;
-use App\Infrastructure\Factories\AbstractDomainFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends AbstractDomainFactory
+class UserFactory extends Factory
 {
     protected $model = User::class;
+
     /**
      * Define the model's default state.
      */

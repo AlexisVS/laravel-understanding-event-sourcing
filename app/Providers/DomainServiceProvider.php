@@ -25,10 +25,5 @@ class DomainServiceProvider extends \Illuminate\Support\ServiceProvider
             dirname(__DIR__) . '/Domain/**/**/Database/Migrations',
             dirname(__DIR__) . '/Domain/**/**/**/Database/Migrations',
         ]);
-
-        app('migrator')->paths([
-            base_path('database/migrations'),
-            base_path('app/Domain'),
-        ]);
     }
 }
