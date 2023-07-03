@@ -3,7 +3,7 @@
 namespace App\Domain\User;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Infrastructure\Factories\HasDomainFactory;
+use App\Application\Factories\HasDomainFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

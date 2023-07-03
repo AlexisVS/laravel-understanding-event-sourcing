@@ -2,7 +2,7 @@
 
 namespace App\Domain\User\Authentication\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Application\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;

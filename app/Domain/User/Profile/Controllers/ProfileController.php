@@ -2,8 +2,8 @@
 
 namespace App\Domain\User\Profile\Controllers;
 
+use App\Application\Http\Controllers\Controller;
 use App\Domain\User\Profile\Requests\ProfileUpdateRequest;
-use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

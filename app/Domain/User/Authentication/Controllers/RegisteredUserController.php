@@ -2,9 +2,9 @@
 
 namespace App\Domain\User\Authentication\Controllers;
 
+use App\Application\Http\Controllers\Controller;
+use App\Application\Providers\RouteServiceProvider;
 use App\Domain\User\User;
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

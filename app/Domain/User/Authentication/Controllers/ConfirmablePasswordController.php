@@ -2,8 +2,8 @@
 
 namespace App\Domain\User\Authentication\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+use App\Application\Http\Controllers\Controller;
+use App\Application\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
