@@ -4,8 +4,9 @@ namespace Database\Factories\Domain\Account;
 
 use App\Application\Infrastructure\Database\Factories\Traits\SupportProjections;
 use App\Domain\Account\Account;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AccountFactory extends \Illuminate\Database\Eloquent\Factories\Factory
+class AccountFactory extends Factory
 {
     use SupportProjections;
 
@@ -17,9 +18,9 @@ class AccountFactory extends \Illuminate\Database\Eloquent\Factories\Factory
     public function definition(): array
     {
         return [
-            'uuid' => $this->faker->uuid(),
-            'name' => $this->faker->name(),
-            'balance' => $this->faker->randomFloat(2, 0, 1000000),
+            'uuid' => fake()->uuid(),
+            'name' => fake()->name(),
+            'balance' => fake()->randomFloat(2, 0, 1000000),
         ];
     }
 }

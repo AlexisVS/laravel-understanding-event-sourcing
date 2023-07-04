@@ -2,15 +2,15 @@
 
 namespace App\Infrastructure\routes;
 
-use App\Domain\User\Authentication\Controllers\AuthenticatedSessionController;
-use App\Domain\User\Authentication\Controllers\ConfirmablePasswordController;
-use App\Domain\User\Authentication\Controllers\EmailVerificationNotificationController;
-use App\Domain\User\Authentication\Controllers\EmailVerificationPromptController;
-use App\Domain\User\Authentication\Controllers\NewPasswordController;
-use App\Domain\User\Authentication\Controllers\PasswordController;
-use App\Domain\User\Authentication\Controllers\PasswordResetLinkController;
-use App\Domain\User\Authentication\Controllers\RegisteredUserController;
-use App\Domain\User\Authentication\Controllers\VerifyEmailController;
+use App\Application\Http\Controllers\Backend\User\Authentication\AuthenticatedSessionController;
+use App\Application\Http\Controllers\Backend\User\Authentication\ConfirmablePasswordController;
+use App\Application\Http\Controllers\Backend\User\Authentication\EmailVerificationNotificationController;
+use App\Application\Http\Controllers\Backend\User\Authentication\EmailVerificationPromptController;
+use App\Application\Http\Controllers\Backend\User\Authentication\NewPasswordController;
+use App\Application\Http\Controllers\Backend\User\Authentication\PasswordController;
+use App\Application\Http\Controllers\Backend\User\Authentication\PasswordResetLinkController;
+use App\Application\Http\Controllers\Backend\User\Authentication\RegisteredUserController;
+use App\Application\Http\Controllers\Backend\User\Authentication\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
