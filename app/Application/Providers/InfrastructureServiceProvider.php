@@ -19,6 +19,8 @@ class InfrastructureServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->loadMigrationsFrom([
             database_path('migrations/**'),
+            database_path('migrations/**/**'),
+            database_path('migrations/**/**/**'),
         ]);
     }
 }

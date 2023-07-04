@@ -172,7 +172,6 @@ return [
         /*
          * Self added Service Providers
          */
-        \App\Application\Providers\DomainServiceProvider::class,
         \App\Application\Providers\InfrastructureServiceProvider::class
     ])->toArray(),
 

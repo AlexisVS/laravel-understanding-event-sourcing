@@ -3,20 +3,23 @@
 namespace App\Domain\User;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Application\Factories\HasDomainFactory;
+use App\Domain\Account\Account;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable, HasDomainFactory;
+    use HasApiTokens, Notifiable, HasFactory;
 
     protected static function newFactory(): Factory
     {
-        return \App\Domain\User\Database\Factories\UserFactory::new();
+        return \Database\Factories\Domain\User\UserFactory::new();
     }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -47,4 +50,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * The attributes that should be cast.
+     */
+    public function accounts(): HasMany
+    {
+        return $this->hasMany(Account::class, 'user_uuid', 'uuid');
+    }
 }

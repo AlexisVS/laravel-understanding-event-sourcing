@@ -50,8 +50,8 @@ $app->singleton(
 | able to resolve it when needed. The config path is needed to load the
 | configuration files for the application.
 */
-$app->useConfigPath(__DIR__ . '/../app/Infrastructure/config');
-$app->useDatabasePath(__DIR__ . '/../app/Infrastructure/database');
+$app->useConfigPath(__DIR__ . '/../config');
+$app->useDatabasePath(__DIR__ . '/../database');
 /*
 |--------------------------------------------------------------------------
 | Return The Application

@@ -61,6 +61,12 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
+            'seed' => [
+                'default' => [
+                    'path' => 'app/Infrastructure/database/seeders',
+                    'class' => 'DatabaseSeeder',
+                ],
+            ],
         ],
 
         'pgsql' => [

@@ -8,11 +8,16 @@ namespace App\Domain\Account;
 use App\Domain\Account\Events\AccountCreated;
 use App\Domain\Account\Events\MoneyAdded;
 use App\Domain\Account\Events\MoneySubtracted;
+use App\Domain\User\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ramsey\Uuid\Uuid;
 use Spatie\EventSourcing\Projections\Projection;
 
 class Account extends Projection
 {
+    use HasFactory;
+
     protected $table = 'accounts';
     protected $guarded = [];
 
@@ -47,5 +52,13 @@ class Account extends Projection
     public static function uuid(string $uuid): Account
     {
         return (new Account)->where('uuid', $uuid)->firstOrFail();
+    }
+
+    /**
+     * Relationships
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
     }
 }

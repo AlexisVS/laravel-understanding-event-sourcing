@@ -10,10 +10,11 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('accounts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuid');
+            $table->id();
+            $table->uuid()->index('accounts_uuid');
             $table->string('name');
             $table->integer('balance')->default(0);
+            $table->foreignUuid('user_uuid')->nullable()->constrained('users', 'uuid', 'users_uuid');
             $table->timestamps();
         });
     }

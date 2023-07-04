@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\User\Database\Seeders;
+namespace Database\Seeders\Domain\User;
 
 use App\Domain\User\User;
 use Illuminate\Database\Seeder;
@@ -14,5 +14,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('password'),
         ])->create();
+
+        User::factory()->count(10)->create();
     }
 }
