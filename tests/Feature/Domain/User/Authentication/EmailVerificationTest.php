@@ -2,8 +2,8 @@
 
 namespace Domain\User\Authentication;
 
-use App\Application\Providers\RouteServiceProvider;
-use App\Domain\User\User;
+use App\Infrastructure\Laravel\Models\User;
+use App\Infrastructure\Laravel\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Domain\Account\Account;
-use App\Domain\User\User;
+use App\Infrastructure\Laravel\Models\User;
 use Database\Seeders\Domain\User\UserSeeder;
 use Illuminate\Database\Seeder;
 

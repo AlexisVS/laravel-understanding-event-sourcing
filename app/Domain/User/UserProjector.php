@@ -2,9 +2,10 @@
 
 namespace App\Domain\User;
 
-use App\Domain\User\Events\UserPasswordReseted;
+use App\Domain\User\Events\UserPasswordReset;
 use App\Domain\User\Events\UserPasswordUpdated;
 use App\Domain\User\Events\UserRegistered;
+use App\Infrastructure\Laravel\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Spatie\EventSourcing\EventHandlers\Projectors\Projector;
@@ -23,7 +24,7 @@ class UserProjector extends Projector
         ]);
     }
 
-    public function onUserPasswordReseted(UserPasswordReseted $event): void
+    public function onUserPasswordReset(UserPasswordReset $event): void
     {
         User::where('uuid', $event->uuid)->forceFill([
             'password' => Hash::make($event->password),

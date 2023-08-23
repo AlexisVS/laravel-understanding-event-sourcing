@@ -15,7 +15,7 @@ class UserAggregatRoot extends AggregateRoot
 
     public function resetPassword($password): UserAggregatRoot
     {
-        $this->recordThat(new Events\UserPasswordReseted($this->uuid(), $password));
+        $this->recordThat(new Events\UserPasswordReset($this->uuid(), $password));
 
         return $this;
     }

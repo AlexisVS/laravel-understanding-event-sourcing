@@ -2,7 +2,7 @@
 
 namespace Domain\User\Profile;
 
-use App\Domain\User\User;
+use App\Infrastructure\Laravel\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

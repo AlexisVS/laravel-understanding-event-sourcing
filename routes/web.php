@@ -2,10 +2,10 @@
 
 namespace App\Infrastructure\routes;
 
-use App\Application\Http\Controllers\Backend\Account\AccountController;
-use App\Application\Http\Controllers\Backend\User\Profile\ProfileController;
-use App\Application\Http\Controllers\DashboardController;
-use App\Application\Http\Controllers\HomeController;
+use App\UserInterface\Backend\Account\AccountController;
+use App\UserInterface\Backend\Dashboard\Controllers\DashboardController;
+use App\UserInterface\Backend\User\Profile\Controllers\ProfileController;
+use App\UserInterface\Frontend\Home\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*

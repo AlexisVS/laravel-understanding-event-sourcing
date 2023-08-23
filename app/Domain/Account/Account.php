@@ -8,7 +8,7 @@ namespace App\Domain\Account;
 use App\Domain\Account\Events\AccountCreated;
 use App\Domain\Account\Events\MoneyAdded;
 use App\Domain\Account\Events\MoneySubtracted;
-use App\Domain\User\User;
+use App\Infrastructure\Laravel\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ramsey\Uuid\Uuid;

@@ -2,8 +2,8 @@
 
 namespace Database\Factories\Domain\Account;
 
-use App\Application\Infrastructure\Database\Factories\Traits\SupportProjections;
 use App\Domain\Account\Account;
+use App\Infrastructure\Laravel\Helpers\Database\Factories\Traits\SupportProjections;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AccountFactory extends Factory
