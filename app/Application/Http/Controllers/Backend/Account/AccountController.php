@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace App\Domain\Account\Controllers;
+namespace App\Application\Http\Controllers\Backend\Account;
 
-use App\Application\Http\Controllers\Controller;
+use App\Application\Http\Controllers\Application\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
 

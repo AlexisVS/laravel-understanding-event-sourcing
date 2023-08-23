@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Domain\User\Authentication\Tests\Feature;
+namespace Domain\User\Authentication;
 
 use App\Application\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Ramsey\Uuid\Uuid;
 use Tests\TestCase;
 
 class RegistrationTest extends TestCase

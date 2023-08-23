@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Domain\User\Profile\Controllers;
+namespace App\Application\Http\Controllers\Backend\User\Profile;
 
-use App\Application\Http\Controllers\Controller;
-use App\Domain\User\Profile\Requests\ProfileUpdateRequest;
+use App\Application\Http\Controllers\Application\Controller;
+use App\Application\Http\Requests\User\Profile\ProfileUpdateRequest;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

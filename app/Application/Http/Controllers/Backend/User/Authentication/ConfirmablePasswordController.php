@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\User\Authentication\Controllers;
+namespace App\Application\Http\Controllers\Backend\User\Authentication;
 
-use App\Application\Http\Controllers\Controller;
+use App\Application\Http\Controllers\Application\Controller;
 use App\Application\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
