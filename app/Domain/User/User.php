@@ -5,6 +5,7 @@ namespace App\Domain\User;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Domain\Account\Account;
 use App\Domain\User\Events\UserRegistered;
+use Database\Factories\Domain\User\UserFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -19,7 +20,7 @@ class User extends Authenticatable
 
     protected static function newFactory(): Factory
     {
-        return \Database\Factories\Domain\User\UserFactory::new();
+        return UserFactory::new();
     }
 
     /**
