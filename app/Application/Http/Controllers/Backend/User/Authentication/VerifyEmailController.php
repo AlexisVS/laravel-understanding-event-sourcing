@@ -2,7 +2,7 @@
 
 namespace App\Application\Http\Controllers\Backend\User\Authentication;
 
-use App\Application\Http\Controllers\Application\Controller;
+use App\Application\Http\Controllers\Controller;
 use App\Application\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;

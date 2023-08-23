@@ -2,7 +2,7 @@
 
 namespace App\Application\Http\Controllers\Backend\User\Profile;
 
-use App\Application\Http\Controllers\Application\Controller;
+use App\Application\Http\Controllers\Controller;
 use App\Application\Http\Requests\User\Profile\ProfileUpdateRequest;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
