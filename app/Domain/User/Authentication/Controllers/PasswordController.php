@@ -3,6 +3,7 @@
 namespace App\Domain\User\Authentication\Controllers;
 
 use App\Application\Http\Controllers\Controller;
+use App\Domain\User\UserAggregatRoot;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -20,9 +21,9 @@ class PasswordController extends Controller
             'password' => ['required', Password::defaults(), 'confirmed'],
         ]);
 
-        $request->user()->update([
-            'password' => Hash::make($validated['password']),
-        ]);
+        UserAggregatRoot::retrieve($request->user()->uuid)
+            ->updatePassword($validated['password'])
+            ->persist();
 
         return back();
     }

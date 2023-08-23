@@ -4,11 +4,13 @@ namespace App\Domain\User;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Domain\Account\Account;
+use App\Domain\User\Events\UserRegistered;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -26,6 +28,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'uuid',
         'name',
         'email',
         'password',
@@ -57,5 +60,17 @@ class User extends Authenticatable
     public function accounts(): HasMany
     {
         return $this->hasMany(Account::class, 'user_uuid', 'uuid');
+    }
+
+    public static function createWithAttributes(array $attributes): string
+    {
+        $attributes['uuid'] = Str::uuid()->toString();
+
+        event(new UserRegistered(
+            uuid: $attributes['uuid'],
+            attributes: $attributes
+        ));
+
+        return $attributes['uuid'];
     }
 }

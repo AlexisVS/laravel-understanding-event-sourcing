@@ -3,6 +3,8 @@
 namespace App\Domain\User\Authentication\Controllers;
 
 use App\Application\Http\Controllers\Controller;
+use App\Domain\User\User;
+use App\Domain\User\UserAggregatRoot;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -46,10 +48,9 @@ class NewPasswordController extends Controller
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user) use ($request) {
-                $user->forceFill([
-                    'password' => Hash::make($request->password),
-                    'remember_token' => Str::random(60),
-                ])->save();
+                UserAggregatRoot::retrieve(User::whereEmail($request->input('email'))->first()->uuid)
+                    ->resetPassword($request->input('password'))
+                    ->persist();
 
                 event(new PasswordReset($user));
             }
