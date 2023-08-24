@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UserInterface\Backend\User\Authentication\Controllers;
+namespace App\UserInterface\web\Backend\User\Authentication\Controllers;
 
 use App\Infrastructure\Laravel\Controller;
 use Illuminate\Http\RedirectResponse;

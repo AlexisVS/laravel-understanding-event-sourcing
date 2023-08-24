@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\UserInterface\Frontend\Home\Controllers;
+namespace App\UserInterface\web\Frontend\Home\Controllers;
 
 use App\Infrastructure\Laravel\Controller;
 use Illuminate\Support\Facades\Route;

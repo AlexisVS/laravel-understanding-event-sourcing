@@ -6,6 +6,15 @@ use Spatie\EventSourcing\AggregateRoots\AggregateRoot;
 
 class UserAggregatRoot extends AggregateRoot
 {
+
+    public function register(array $attributes): UserAggregatRoot
+    {
+        $this->loadUuid($attributes['uuid']);
+        $this->recordThat(new Events\UserRegistered($attributes['uuid'], $attributes));
+
+        return $this;
+    }
+
     public function updatePassword($password): UserAggregatRoot
     {
         $this->recordThat(new Events\UserPasswordUpdated($this->uuid(), $password));

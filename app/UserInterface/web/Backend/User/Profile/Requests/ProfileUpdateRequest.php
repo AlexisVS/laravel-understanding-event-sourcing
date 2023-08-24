@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UserInterface\Backend\User\Profile\Requests;
+namespace App\UserInterface\web\Backend\User\Profile\Requests;
 
 use App\Infrastructure\Laravel\Models\User;
 use Illuminate\Foundation\Http\FormRequest;

@@ -64,16 +64,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Account::class, 'user_uuid', 'uuid');
     }
-
-    public static function createWithAttributes(array $attributes): string
-    {
-        $attributes['uuid'] = Str::uuid()->toString();
-
-        event(new UserRegistered(
-            uuid: $attributes['uuid'],
-            attributes: $attributes
-        ));
-
-        return $attributes['uuid'];
-    }
 }

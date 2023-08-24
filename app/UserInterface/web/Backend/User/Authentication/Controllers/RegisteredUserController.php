@@ -1,7 +1,8 @@
 <?php
 
-namespace App\UserInterface\Backend\User\Authentication\Controllers;
+namespace App\UserInterface\web\Backend\User\Authentication\Controllers;
 
+use App\Domain\User\UserAggregatRoot;
 use App\Infrastructure\Laravel\Controller;
 use App\Infrastructure\Laravel\Models\User;
 use App\Infrastructure\Laravel\Providers\RouteServiceProvider;
@@ -10,9 +11,9 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules;
-use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
+use Str;
 
 class RegisteredUserController extends Controller
 {
@@ -27,7 +28,6 @@ class RegisteredUserController extends Controller
     /**
      * Handle an incoming registration request.
      *
-     * @throws ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
@@ -37,9 +37,15 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $userUuid = User::createWithAttributes($request->only('name', 'email', 'password'));
+        $userUuid = Str::uuid()->toString();
 
-        $user = User::where('uuid', $userUuid)->firstOrFail();
+        $attributes = array_merge($request->only('name', 'email', 'password'), ['uuid' => $userUuid]);
+
+        (new UserAggregatRoot())
+            ->register($attributes)
+            ->persist();
+
+        $user = (new User)->where('uuid', $userUuid)->firstOrFail();
 
         event(new Registered($user));
 

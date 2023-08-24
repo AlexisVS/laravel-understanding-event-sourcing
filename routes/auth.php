@@ -2,15 +2,15 @@
 
 namespace App\Infrastructure\routes;
 
-use App\UserInterface\Backend\User\Authentication\Controllers\AuthenticatedSessionController;
-use App\UserInterface\Backend\User\Authentication\Controllers\ConfirmablePasswordController;
-use App\UserInterface\Backend\User\Authentication\Controllers\EmailVerificationNotificationController;
-use App\UserInterface\Backend\User\Authentication\Controllers\EmailVerificationPromptController;
-use App\UserInterface\Backend\User\Authentication\Controllers\NewPasswordController;
-use App\UserInterface\Backend\User\Authentication\Controllers\PasswordController;
-use App\UserInterface\Backend\User\Authentication\Controllers\PasswordResetLinkController;
-use App\UserInterface\Backend\User\Authentication\Controllers\RegisteredUserController;
-use App\UserInterface\Backend\User\Authentication\Controllers\VerifyEmailController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\AuthenticatedSessionController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\ConfirmablePasswordController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\EmailVerificationNotificationController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\EmailVerificationPromptController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\NewPasswordController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\PasswordController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\PasswordResetLinkController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\RegisteredUserController;
+use App\UserInterface\web\Backend\User\Authentication\Controllers\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {

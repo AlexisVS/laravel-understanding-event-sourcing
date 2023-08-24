@@ -1,10 +1,10 @@
 <?php
 
-namespace App\UserInterface\Backend\User\Authentication\Controllers;
+namespace App\UserInterface\web\Backend\User\Authentication\Controllers;
 
 use App\Infrastructure\Laravel\Controller;
 use App\Infrastructure\Laravel\Providers\RouteServiceProvider;
-use App\UserInterface\Backend\User\Authentication\Requests\LoginRequest;
+use App\UserInterface\web\Backend\User\Authentication\Requests\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

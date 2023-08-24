@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\UserInterface\Backend\Dashboard\Controllers;
+namespace App\UserInterface\web\Backend\Dashboard\Controllers;
 
 use App\Infrastructure\Laravel\Controller;
 use Inertia\Inertia;
