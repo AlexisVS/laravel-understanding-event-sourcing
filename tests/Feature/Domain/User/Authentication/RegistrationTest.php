@@ -2,7 +2,7 @@
 
 namespace Domain\User\Authentication;
 
-use App\Infrastructure\Laravel\Providers\RouteServiceProvider;
+use App\Application\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

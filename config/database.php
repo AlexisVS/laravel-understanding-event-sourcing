@@ -63,7 +63,7 @@ return [
             ]) : [],
             'seed' => [
                 'default' => [
-                    'path' => 'app/Infrastructure/database/seeders',
+                    'path' => 'database/seeders',
                     'class' => 'DatabaseSeeder',
                 ],
             ],

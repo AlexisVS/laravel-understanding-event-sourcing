@@ -20,8 +20,8 @@ class Console extends ConsoleKernel
      */
     protected function commands(): void
     {
-        $this->load(__DIR__ . '/Commands');
+        $this->load(app_path('Application/Commands'));
 
-        require base_path('routes/console.php');
+        require app_path('UserInterface/routes/console.php');
     }
 }
